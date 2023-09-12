@@ -19,12 +19,12 @@ export default function PagInicial() {
                 {produtos.map(produto => (
                     <Link to={`/produto/${encodeURIComponent(produto.image)}/${encodeURIComponent(produto.title)}/${encodeURIComponent(produto.description)}`} style={{ textDecoration: 'none' }}>
                         <div key={produto.id} className='pt-5 col d-flex justify-content-center'>
-                            <div className='card align-items-center' style={{ width: '250px', height: '400px' }}>
+                            <div className='card align-items-center fundo-card' style={{ width: '250px', height: '380px' }}>
                                 <img src={produto.image} className='card-img-top card-img p-3' alt={produto.title} />
                                 <div className='card-body'>
-                                    <h5 className='card-title'>{produto.title}</h5>
-                                    <p className='card-text'>R$: {produto.price}</p>
-                                    <p className='card-text'>{produto.category}</p>
+                                    <h5 className='card-title nome'>{produto.title}</h5>
+                                    <p className='preco'>R$: {produto.price}</p>
+                                    <p className='card-text categoria'>{produto.category}</p>
                                 </div>
                             </div>
                         </div></Link>

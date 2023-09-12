@@ -1,4 +1,41 @@
 .card-img {
     width: 200px;
-    height: 200px; 
+    height: 200px;
+    background-color: gray;
+}
+
+.preco {
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+    background-color: green;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+    border-radius: 10px;
+  }
+
+.fundo-card {
+    border: 1px solid #ddd;
+    padding: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.nome {
+    white-space: nowrap;  
+    overflow: hidden;  
+    text-overflow: ellipsis;
+    max-width: 200px;
+}
+
+.categoria {
+    text-align: center;
+}
+
+.fundo {
+    background-color: white;
+}
+
+body {
+    background-color: black;
 }
