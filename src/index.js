@@ -2,13 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import PagContato from './paginas/PagContato';
-import Produto from './componentes/Produto';
 import Exibição from './Site';
+import PagSobre from './paginas/PagSobre';
 
 const roteador = createBrowserRouter([
   {path: '/', element: <Exibição/>},
-  {path: '/produto/:imagem/:titulo/:descricao', element: <Produto/>},
+  {path: '/produto/:imagem/:titulo/:descricao', element: <PagSobre />},
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

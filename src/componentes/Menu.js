@@ -2,7 +2,6 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import React, { useEffect, useState, useRef } from 'react';
-import axios from 'axios';
 
 export default function Menu() {
 
@@ -29,18 +28,6 @@ export default function Menu() {
           });
       }, []);
       console.log(categoria)
-    
-    /*const [categoria, setCategoria] = useState([]);
-
-  useEffect(() => {
-    axios.get('https://fakestoreapi.com/products')
-      .then((resposta) => {
-        setCategoria(resposta.data);
-      })
-      .catch((error) => {
-        console.error('Erro:', error);
-      });
-  }, []);*/
 
   return (
     <>
