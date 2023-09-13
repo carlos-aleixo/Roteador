@@ -6,7 +6,7 @@ export default function PagSobre() {
     const { imagem, titulo, descricao } = useParams();
     return <>
         <Menu/>
-        <div className="container mt-5 fundo">
+        <div className="container mt-5">
             <div className="g-6 pt-5 row row-cols-1 row-cols-md-2">
                 <div className="col">
                     <img src={imagem} className="img-fluid pb-3"/>

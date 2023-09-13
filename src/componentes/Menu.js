@@ -1,45 +1,41 @@
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
+import { Menu } from 'antd';
+import { ContainerOutlined } from '@ant-design/icons';
+import { Link } from 'react-router-dom';
 
-export default function Menu() {
+const Navbar = () => {
+  const [categoria, setCategoria] = useState([]);
 
-    const [categoria, setCategoria] = useState([]);
-    console.log(categoria)
-
-    useEffect(() => {
-        fetch('https://fakestoreapi.com/products/categories')
-          .then(response => {
-            if (!response.ok) {
-              throw new Error('Erro na solicitação');
-            }
-            console.log(response)
-            return response.json();
-          })
-          .then(data => {
-            console.log(data)
-            setCategoria(data);
-            console.log(categoria)
-
-          })
-          .catch(error => {
-            console.error('Erro:', error);
-          });
-      }, []);
-      console.log(categoria)
+  useEffect(() => {
+    fetch('https://fakestoreapi.com/products/categories')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Erro na solicitação');
+        }
+        return response.json();
+      })
+      .then(data => {
+        setCategoria(data);
+      })
+      .catch(error => {
+        console.error('Erro:', error);
+      });
+  }, []);
 
   return (
-    <>
-      <Navbar fixed='top' bg="dark" data-bs-theme="dark">
-        <Container>
-          <Navbar.Brand href="#home">Loja</Navbar.Brand>
-          <Nav className="me-auto">
-    
-          {categoria.map(category => ( <Nav.Link href="#home">{category}</Nav.Link> ))}
-          </Nav>
-        </Container>
-      </Navbar>
-    </>
+    <div>
+      <Menu mode="horizontal" theme="dark">
+        <Menu.Item key="home" icon={<ContainerOutlined />}>
+          <Link to="/">Loja</Link>
+        </Menu.Item>
+        {categoria.map(category => (
+          <Menu.Item key={category}>
+            <Link to={`/categoria/${category}`}>{category}</Link>
+          </Menu.Item>
+        ))}
+      </Menu>
+    </div>
   );
-}
+};
+
+export default Navbar;
